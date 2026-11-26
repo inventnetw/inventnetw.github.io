@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑马AI短剧_黑马AI短剧官方视频平台_黑马AI短剧创作社区</title>
+<meta name="description" content="黑马AI短剧官方网站，专注AI短剧创作与传播的视频品牌平台，汇聚原创短剧、创作者社区与行业观察内容，提供高清正版短剧观看与创作成长支持。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312141a'/%3E%3Cpath d='M14 46V18h7l9 13 9-13h7v28h-7V30l-9 12-9-12v16z' fill='%23ff3d7f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --hm-bg:#0f1116;
+  --hm-bg2:#151923;
+  --hm-card:#1a1f2b;
+  --hm-line:#2a3140;
+  --hm-text:#e8ecf3;
+  --hm-muted:#97a1b3;
+  --hm-pink:#ff3d7f;
+  --hm-cyan:#3de1ff;
+  --hm-lime:#c6ff4d;
+  --hm-radius:16px;
+  --hm-sticky:118px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hm-sticky)}
+body{
+  background:var(--hm-bg);
+  color:var(--hm-text);
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.hm-wrap{width:min(1180px,92%);margin:0 auto}
+.hm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== S1 公告条 + 页头 吸顶 ===== */
+.hm-sticky-head{position:sticky;top:0;z-index:120}
+.hm-notice{
+  background:linear-gradient(90deg,#ff3d7f,#a12bff 55%,#3de1ff);
+  color:#0b0d13;font-size:13.5px;font-weight:600;
+}
+.hm-notice-inner{display:flex;align-items:center;gap:12px;padding:8px 0;flex-wrap:wrap}
+.hm-notice-tag{background:#0b0d13;color:#fff;border-radius:999px;padding:1px 10px;font-size:11.5px;letter-spacing:.08em;flex:none}
+.hm-notice-text{flex:1;min-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hm-notice-link{font-weight:700;flex:none;border-bottom:1.5px solid #0b0d13}
+.hm-header{background:rgba(15,17,22,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--hm-line)}
+.hm-header-inner{display:flex;align-items:center;gap:22px;padding:14px 0;flex-wrap:wrap}
+.hm-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.02em;flex:none}
+.hm-logo-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#ff3d7f,#7b2bff);display:grid;place-items:center;font-size:15px;color:#fff;font-weight:900}
+.hm-logo small{display:block;font-size:10.5px;font-weight:500;color:var(--hm-muted);letter-spacing:.18em;line-height:1}
+.hm-nav{display:flex;gap:20px;font-size:14.5px;flex-wrap:wrap}
+.hm-nav a{color:var(--hm-muted);padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.hm-nav a:hover{color:#fff;border-color:var(--hm-pink)}
+.hm-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.hm-search{display:flex;align-items:center;gap:6px;background:var(--hm-bg2);border:1px solid var(--hm-line);border-radius:999px;padding:6px 8px 6px 14px;min-width:238px}
+.hm-search input{background:none;border:none;outline:none;color:#fff;font-size:13.5px;width:100%;min-width:0}
+.hm-search input::placeholder{color:#687389}
+.hm-search-btn{background:var(--hm-pink);color:#fff;border-radius:999px;font-size:12.5px;padding:5px 13px;flex:none;font-weight:600}
+.hm-btn-ghost{border:1px solid var(--hm-line);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--hm-text);white-space:nowrap}
+.hm-btn-ghost:hover{border-color:var(--hm-cyan);color:var(--hm-cyan)}
+.hm-burger{display:none;width:40px;height:40px;border:1px solid var(--hm-line);border-radius:10px;flex-direction:column;justify-content:center;align-items:center;gap:4px}
+.hm-burger span{width:18px;height:2px;background:var(--hm-text);border-radius:2px;transition:.25s}
+.hm-burger.hm-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hm-burger.hm-open span:nth-child(2){opacity:0}
+.hm-burger.hm-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.hm-search-feedback{font-size:12.5px;color:var(--hm-cyan);padding:0 0 8px;display:none}
+.hm-search-feedback.hm-show{display:block}
+
+/* ===== S2 首屏：居中大标题 + 宽幅主视觉 ===== */
+.hm-hero{padding:56px 0 34px;position:relative;overflow:hidden}
+.hm-hero::before{content:"";position:absolute;inset:-120px -10% auto;height:420px;background:radial-gradient(60% 70% at 50% 0%,rgba(255,61,127,.22),transparent 70%);pointer-events:none}
+.hm-hero-head{text-align:center;max-width:860px;margin:0 auto 32px;position:relative}
+.hm-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.16em;color:var(--hm-lime);border:1px solid rgba(198,255,77,.35);border-radius:999px;padding:5px 14px;margin-bottom:18px;text-transform:uppercase}
+.hm-hero h1{font-size:clamp(30px,5.2vw,52px);line-height:1.18;font-weight:900;letter-spacing:-.01em}
+.hm-hero h1 em{font-style:normal;background:linear-gradient(96deg,#ff3d7f,#c6ff4d 60%,#3de1ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hm-hero-lead{color:var(--hm-muted);font-size:15.5px;margin:16px auto 0;max-width:680px}
+.hm-hero-visual{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--hm-line);background:#0b0d13}
+.hm-hero-visual img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.hm-hero-caption{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(0deg,rgba(7,8,12,.95),rgba(7,8,12,.55) 55%,transparent);display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap}
+.hm-hero-caption h2{font-size:19px;font-weight:700;color:#fff}
+.hm-hero-caption p{font-size:13px;color:#c6cddb;max-width:520px}
+.hm-play-tag{width:52px;height:52px;border-radius:50%;background:var(--hm-pink);display:grid;place-items:center;flex:none;box-shadow:0 0 0 8px rgba(255,61,127,.16);font-size:17px;color:#fff}
+.hm-hero-intro{max-width:900px;margin:26px auto 0;text-align:center;color:#b6c0d1;font-size:15px}
+.hm-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:30px auto 0;max-width:840px}
+.hm-stat{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:var(--hm-radius);padding:18px 16px;text-align:center}
+.hm-stat b{display:block;font-size:26px;font-weight:900;color:var(--hm-cyan);letter-spacing:-.02em}
+.hm-stat span{font-size:12.5px;color:var(--hm-muted)}
+.hm-hero-actions{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.hm-cta-primary{background:linear-gradient(96deg,#ff3d7f,#a12bff);color:#fff;font-weight:700;border-radius:999px;padding:13px 30px;font-size:14.5px;box-shadow:0 12px 30px rgba(255,61,127,.26)}
+.hm-cta-primary:hover{filter:brightness(1.08)}
+.hm-cta-line{border:1px solid var(--hm-line);border-radius:999px;padding:13px 26px;font-size:14.5px;color:var(--hm-text)}
+.hm-cta-line:hover{border-color:var(--hm-lime);color:var(--hm-lime)}
+
+/* ===== 通用 section ===== */
+.hm-section{padding:52px 0}
+.hm-section-head{margin-bottom:26px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.hm-section-head h2{font-size:clamp(21px,2.6vw,28px);font-weight:800;letter-spacing:-.01em}
+.hm-section-head h2 span{color:var(--hm-pink)}
+.hm-section-head p{color:var(--hm-muted);font-size:13.5px;max-width:560px}
+.hm-eyebrow{font-size:12px;letter-spacing:.2em;color:var(--hm-cyan);margin-bottom:8px;text-transform:uppercase;font-weight:700}
+
+/* 视频区：一幅重点大图 + 文字列表 */
+.hm-video-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;minmax:0}
+.hm-feature-card{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.hm-feature-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.hm-feature-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.hm-badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;border-radius:6px;padding:3px 9px;background:rgba(255,61,127,.14);color:#ff7aa8;border:1px solid rgba(255,61,127,.3)}
+.hm-feature-body h3{font-size:20px;font-weight:800;line-height:1.4}
+.hm-feature-body p{color:#aeb8c9;font-size:13.5px}
+.hm-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#7e8a9e}
+.hm-ops{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;align-items:center}
+.hm-op{border:1px solid var(--hm-line);border-radius:999px;padding:6px 13px;font-size:12.5px;color:#c3ccdb;display:inline-flex;gap:6px;align-items:center;transition:.18s}
+.hm-op:hover{border-color:var(--hm-cyan);color:var(--hm-cyan)}
+.hm-op.hm-active{background:rgba(255,61,127,.14);border-color:rgba(255,61,127,.5);color:#ff7aa8}
+.hm-op.hm-saved{border-color:rgba(198,255,77,.5);color:var(--hm-lime)}
+.hm-video-list{display:flex;flex-direction:column;gap:2px}
+.hm-video-item{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:14px;padding:16px 4px;border-bottom:1px dashed var(--hm-line);align-items:start}
+.hm-video-item:last-child{border-bottom:none}
+.hm-video-num{font-size:19px;font-weight:900;color:#3a4356;font-variant-numeric:tabular-nums}
+.hm-video-item h3{font-size:15.5px;font-weight:700;margin-bottom:5px}
+.hm-video-item h3 a:hover{color:var(--hm-cyan)}
+.hm-video-item p{font-size:12.8px;color:#93a0b4;margin-bottom:7px}
+.hm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}
+.hm-tag{font-size:11px;color:#8b97ac;border:1px solid var(--hm-line);border-radius:5px;padding:1px 7px}
+.hm-video-item .hm-ops{gap:6px}
+
+/* 专题 */
+.hm-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.hm-topic{background:var(--hm-bg2);border:1px solid var(--hm-line);border-radius:var(--hm-radius);padding:22px;display:flex;flex-direction:column;gap:12px;transition:.2s}
+.hm-topic:hover{transform:translateY(-3px);border-color:#3a4considered}
+.hm-topic:hover{border-color:#3a4560}
+.hm-topic-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hm-topic h3{font-size:16.5px;font-weight:750}
+.hm-status{font-size:11px;border-radius:999px;padding:2px 9px;background:rgba(61,225,255,.12);color:var(--hm-cyan);border:1px solid rgba(61,225,255,.3);flex:none}
+.hm-topic p{font-size:13px;color:#95a1b5}
+.hm-topic ul{display:flex;flex-direction:column;gap:8px;font-size:13px;margin-top:auto}
+.hm-topic li{display:flex;gap:8px;color:#c3ccdb;align-items:baseline}
+.hm-topic li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--hm-pink);flex:none;transform:translateY(-3px)}
+.hm-topic-img{border-radius:12px;overflow:hidden;border:1px solid var(--hm-line)}
+.hm-topic-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* 关键词解析 */
+.hm-explain{background:var(--hm-bg2);border:1px solid var(--hm-line);border-radius:22px;padding:32px}
+.hm-explain h3{font-size:17.5px;font-weight:800;margin:24px 0 10px;color:#fff;display:flex;gap:9px;align-items:baseline}
+.hm-explain h3:first-child{margin-top:0}
+.hm-explain h3 i{font-style:normal;font-size:12px;color:var(--hm-lime);font-weight:700;letter-spacing:.08em}
+.hm-explain p{color:#a9b4c6;font-size:14px;margin-bottom:10px}
+.hm-explain strong{color:#fff;font-weight:700}
+.hm-split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px;align-items:start}
+.hm-split img{border-radius:14px;border:1px solid var(--hm-line);width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* 作者区：单行作者名录 */
+.hm-authors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.hm-author{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:var(--hm-radius);padding:18px 16px;display:flex;flex-direction:column;gap:9px;transition:.2s}
+.hm-author:hover{border-color:#3a4560;transform:translateY(-3px)}
+.hm-avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:18px;color:#0b0d13;flex:none}
+.hm-author h3{font-size:15px;font-weight:750}
+.hm-author .hm-role{font-size:11.5px;color:var(--hm-cyan)}
+.hm-author p{font-size:12.5px;color:#8e9bb0}
+.hm-author-stats{display:flex;gap:10px;font-size:11.5px;color:#76839a;flex-wrap:wrap}
+.hm-more-btn{margin-top:auto;font-size:12px;border:1px solid var(--hm-line);border-radius:8px;padding:5px 0;text-align:center;color:#c3ccdb}
+.hm-more-btn:hover{border-color:var(--hm-cyan);color:var(--hm-cyan)}
+
+/* 评论：双列短评 */
+.hm-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.hm-comment{background:var(--hm-bg2);border:1px solid var(--hm-line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.hm-comment-head{display:flex;align-items:center;gap:9px}
+.hm-comment-head .hm-avatar{width:32px;height:32px;font-size:12px;border-radius:50%}
+.hm-comment-head b{font-size:13.5px}
+.hm-comment-head span{font-size:11.5px;color:#6f7c92;margin-left:auto}
+.hm-comment p{font-size:13px;color:#a7b2c4}
+.hm-stars{color:var(--hm-lime);font-size:12px;letter-spacing:.1em}
+
+/* 榜单 / 动态 / 合作 / FAQ / 投稿 */
+.hm-two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+.hm-rank{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:var(--hm-radius);padding:22px}
+.hm-rank h3{font-size:16px;font-weight:750;margin-bottom:14px;display:flex;justify-content:space-between;align-items:baseline}
+.hm-rank h3 span{font-size:11.5px;color:var(--hm-muted);font-weight:400}
+.hm-rank ol{display:flex;flex-direction:column;gap:2px}
+.hm-rank li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;padding:10px 0;border-bottom:1px dashed var(--hm-line);font-size:13.5px;align-items:center}
+.hm-rank li:last-child{border-bottom:none}
+.hm-rank .hm-rk{font-weight:900;color:#4b5568;font-variant-numeric:tabular-nums}
+.hm-rank li .hm-hot{font-size:11.5px;color:#8b97ac;white-space:nowrap}
+.hm-rank li a:hover{color:var(--hm-cyan)}
+.hm-timeline{display:flex;flex-direction:column;gap:16px}
+.hm-timeline-item{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;border-left:2px solid #2a3140;padding-left:16px;position:relative}
+.hm-timeline-item::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--hm-pink)}
+.hm-timeline-date{font-size:12px;color:var(--hm-cyan);font-weight:700}
+.hm-timeline-item h3{font-size:14.5px;font-weight:700;margin-bottom:4px}
+.hm-timeline-item p{font-size:13px;color:#93a0b4}
+.hm-partners{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.hm-partner{border:1px solid var(--hm-line);border-radius:12px;padding:16px 12px;text-align:center;font-size:13px;color:#b8c3d4;background:var(--hm-bg2)}
+.hm-faq{display:flex;flex-direction:column;gap:10px}
+.hm-faq details{border:1px solid var(--hm-line);border-radius:12px;background:var(--hm-card);overflow:hidden}
+.hm-faq summary{padding:14px 18px;font-size:14px;font-weight:650;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.hm-faq summary::-webkit-details-marker{display:none}
+.hm-faq summary::after{content:"+";color:var(--hm-pink);font-weight:900;font-size:17px;line-height:1}
+.hm-faq details[open] summary::after{content:"−"}
+.hm-faq details p{padding:0 18px 16px;font-size:13.2px;color:#9fabbf}
+.hm-submit{background:linear-gradient(120deg,rgba(255,61,127,.14),rgba(61,225,255,.08));border:1px solid var(--hm-line);border-radius:20px;padding:28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.hm-submit h3{font-size:19px;font-weight:800}
+.hm-submit p{color:#a7b2c4;font-size:13.5px;max-width:520px}
+.hm-submit .hm-cta-primary{margin-left:auto}
+
+/* 页脚 */
+.hm-footer{border-top:1px solid var(--hm-line);margin-top:26px;padding:40px 0 28px;background:#0b0d13}
+.hm-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.hm-footer h4{font-size:13.5px;font-weight:750;margin-bottom:12px;color:#fff}
+.hm-footer p,.hm-footer li{font-size:13px;color:#8794a9}
+.hm-footer ul{display:flex;flex-direction:column;gap:8px}
+.hm-footer li a:hover{color:var(--hm-cyan)}
+.hm-footer-bottom{margin-top:28px;padding-top:18px;border-top:1px solid var(--hm-line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#6c788d}
+.hm-top-btn{position:fixed;right:20px;bottom:26px;width:46px;height:46px;border-radius:50%;background:var(--hm-pink);color:#fff;font-size:18px;display:grid;place-items:center;box-shadow:0 10px 26px rgba(255,61,127,.36);opacity:0;pointer-events:none;transition:.25s;z-index:100}
+.hm-top-btn.hm-show{opacity:1;pointer-events:auto}
+
+/* Toast & 弹窗 */
+.hm-toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:#fff;color:#10131a;font-size:13.5px;font-weight:600;border-radius:999px;padding:11px 22px;opacity:0;pointer-events:none;transition:.25s;z-index:200;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.hm-toast.hm-show{opacity:1;transform:translate(-50%,0)}
+.hm-modal-mask{position:fixed;inset:0;background:rgba(5,7,11,.72);backdrop-filter:blur(4px);display:none;place-items:center;padding:20px;z-index:220}
+.hm-modal-mask.hm-show{display:grid}
+.hm-modal{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:18px;width:min(520px,100%);padding:26px;max-height:86vh;overflow:auto}
+.hm-modal h3{font-size:18px;font-weight:800;margin-bottom:8px}
+.hm-modal p{font-size:13.5px;color:#9fabbf;margin-bottom:14px}
+.hm-modal label{display:block;font-size:12.5px;color:var(--hm-muted);margin:10px 0 5px}
+.hm-modal input,.hm-modal textarea,.hm-modal select{width:100%;background:var(--hm-bg2);border:1px solid var(--hm-line);border-radius:9px;padding:10px 12px;color:#fff;font-size:13.5px;outline:none;font-family:inherit}
+.hm-modal input:focus,.hm-modal textarea:focus{border-color:var(--hm-pink)}
+.hm-modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.hm-modal-cancel{border:1px solid var(--hm-line);border-radius:999px;padding:9px 20px;font-size:13.5px}
+.hm-modal-submit{background:var(--hm-pink);color:#fff;border-radius:999px;padding:9px 22px;font-size:13.5px;font-weight:700}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .hm-authors{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hm-topics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hm-partners{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hm-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:860px){
+  :root{--hm-sticky:0px}
+  .hm-nav{display:none;width:100%;flex-direction:column;gap:2px;padding:8px 0 12px}
+  .hm-nav.hm-nav-open{display:flex}
+  .hm-nav a{padding:10px 6px;border-bottom:1px solid var(--hm-line)}
+  .hm-burger{display:flex}
+  .hm-header-tools{margin-left:auto}
+  .hm-search{min-width:0;flex:1}
+  .hm-video-grid,.hm-split,.hm-two-col{grid-template-columns:minmax(0,1fr)}
+  .hm-hero-visual img{aspect-ratio:16/10}
+  .hm-comments{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+  .hm-authors{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hm-topics{grid-template-columns:minmax(0,1fr)}
+  .hm-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hm-stat b{font-size:19px}
+  .hm-stat span{font-size:11px}
+  .hm-partners{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hm-footer-grid{grid-template-columns:minmax(0,1fr)}
+  .hm-explain{padding:22px}
+  .hm-hero{padding-top:38px}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- S1 公告条 + 页头（一同吸顶） -->
+<div class="hm-sticky-head">
+  <div class="hm-notice">
+    <div class="hm-wrap hm-notice-inner">
+      <span class="hm-notice-tag">官方发布</span>
+      <span class="hm-notice-text">《深夜剪辑室》第 2 季 12 集全集上线；首届黑马 AI 短剧创作挑战赛报名通道已开启，11 月 30 日截止</span>
+      <a class="hm-notice-link" href="#hm-submit">立即报名</a>
+    </div>
+  </div>
+  <header class="hm-header">
+    <div class="hm-wrap hm-header-inner">
+      <a class="hm-logo" href="#hm-top">
+        <span class="hm-logo-mark">黑</span>
+        <span>黑马AI短剧<small>HEIMA AI DRAMA</small></span>
+      </a>
+      <nav class="hm-nav" id="hmNav" aria-label="主导航">
+        <a href="#hm-featured">精选短剧</a>
+        <a href="#hm-topic">专题企划</a>
+        <a href="#hm-explain">关键词解析</a>
+        <a href="#hm-author">创作者</a>
+        <a href="#hm-rank">榜单</a>
+        <a href="#hm-news">企业动态</a>
+        <a href="#hm-faq">帮助</a>
+      </nav>
+      <div class="hm-header-tools">
+        <div class="hm-search">
+          <input id="hmSearch" type="search" placeholder="搜索短剧、创作者、专题" aria-label="站内搜索">
+          <button class="hm-search-btn" id="hmSearchBtn" type="button">搜索</button>
+        </div>
+        <button class="hm-btn-ghost" id="hmShareBtn" type="button">分享官网</button>
+        <button class="hm-burger" id="hmBurger" type="button" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="hm-wrap"><p class="hm-search-feedback" id="hmSearchFeedback"></p></div>
+  </header>
+</div>
+
+<main id="hm-top">
+
+  <!-- S2 首屏 -->
+  <section class="hm-hero">
+    <div class="hm-wrap">
+      <div class="hm-hero-head">
+        <span class="hm-kicker">品牌官方网站 · 2026</span>
+        <h1>黑马AI短剧<em>｜AI 影像叙事官方视频平台</em></h1>
+        <p class="hm-hero-lead">以原创短剧连接创作者与观众，用 AI 工具降低影像表达的门槛。这里是黑马AI短剧官方网站，也是属于每一位短剧创作者的内容社区。</p>
+      </div>
+      <figure class="hm-hero-visual">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1260 540'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121a2c'/%3E%3Cstop offset='1' stop-color='%23340f2a'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff3d7f'/%3E%3Cstop offset='1' stop-color='%233de1ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1260' height='540' fill='url(%23g1)'/%3E%3Cg opacity='.5'%3E%3Ccircle cx='1010' cy='120' r='150' fill='%23a12bff' opacity='.45'/%3E%3Ccircle cx='180' cy='430' r='190' fill='%233de1ff' opacity='.16'/%3E%3C/g%3E%3Cg fill='none' stroke='url(%23g2)' stroke-width='2' opacity='.8'%3E%3Cpath d='M120 400 L360 240 L560 330 L820 150 L1080 260'/%3E%3C/g%3E%3Cg fill='%23ff3d7f'%3E%3Ccircle cx='360' cy='240' r='7'/%3E%3Ccircle cx='560' cy='330' r='7'/%3E%3Ccircle cx='820' cy='150' r='7'/%3E%3C/g%3E%3Cg%3E%3Crect x='470' y='150' width='320' height='200' rx='16' fill='%230b0d13' stroke='%232a3140'/%3E%3Crect x='490' y='172' width='280' height='120' rx='8' fill='%23151c2b'/%3E%3Cpolygon points='610,212 610,252 648,232' fill='%23c6ff4d'/%3E%3Crect x='490' y='306' width='170' height='9' rx='4' fill='%23313a4d'/%3E%3Crect x='490' y='324' width='100' height='9' rx='4' fill='%23252d3d'/%3E%3C/g%3E%3Cg font-family='sans-serif' fill='%23e8ecf3'%3E%3Ctext x='120' y='110' font-size='34' font-weight='700'%3E深夜播放室 / SCENE 24%3C/text%3E%3Ctext x='120' y='150' font-size='19' fill='%2397a1b3'%3E每一帧都由 AI 与人类共同完成%3C/text%3E%3C/g%3E%3C/svg%3E" alt="黑马AI短剧首屏主视觉：夜色中的短剧播放界面与创作曲线">
+        <figcaption class="hm-hero-caption">
+          <span class="hm-play-tag" aria-hidden="true">▶</span>
+          <div>
+            <h2>本周品牌主推：《深夜剪辑室》第 2 季</h2>
+            <p>8 位创作者、42 天制作周期，完整记录一部 AI 短剧从脚本到成片的全部过程。</p>
+          </div>
+        </figcaption>
+      </figure>
+      <p class="hm-hero-intro">黑马AI短剧是专注于 AI 短剧创作与传播的企业级内容平台，我们为原创作者提供脚本辅助、分镜生成、剪辑协作与正版分发的一站式支持，让每一个有故事的人都能被看见。</p>
+      <div class="hm-stats">
+        <div class="hm-stat"><b>2,860+</b><span>在架原创短剧</span></div>
+        <div class="hm-stat"><b>1,240</b><span>认证创作者</span></div>
+        <div class="hm-stat"><b>96.4%</b><span>观众口碑好评率</span></div>
+      </div>
+      <div class="hm-hero-actions">
+        <a class="hm-cta-primary" href="#hm-featured">开始观看精品内容</a>
+        <button class="hm-cta-line" id="hmSubmitHero" type="button">我要投稿</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 视频内容区 -->
+  <section class="hm-section" id="hm-featured">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Featured Drama</p>
+          <h2>焦点内容 <span>·</span> 黑马AI短剧本周主推</h2>
+        </div>
+        <p>每晚 20:00 更新，全部为平台正版高清首发内容，支持收藏与评论互动。</p>
+      </div>
+      <div class="hm-video-grid">
+        <article class="hm-feature-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a1030'/%3E%3Cstop offset='1' stop-color='%230f2a33'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Cg opacity='.9'%3E%3Crect x='80' y='70' width='640' height='310' rx='14' fill='%230b0d13' stroke='%233de1ff' stroke-opacity='.4'/%3E%3Crect x='104' y='94' width='592' height='210' rx='8' fill='%23182331'/%3E%3Cpath d='M104 230 L240 180 L360 260 L500 160 L696 235 L696 304 L104 304 Z' fill='%23ff3d7f' opacity='.28'/%3E%3Ccircle cx='620' cy='150' r='26' fill='%23c6ff4d' opacity='.85'/%3E%3Crect x='104' y='322' width='240' height='10' rx='5' fill='%234c5972'/%3E%3Crect x='104' y='344' width='150' height='10' rx='5' fill='%2331394b'/%3E%3C/g%3E%3Ctext x='80' y='410' font-family='sans-serif' font-size='20' fill='%23e8ecf3'%3E深夜剪辑室 · 第 12 集 最终剪辑版%3C/text%3E%3C/svg%3E" alt="短剧《深夜剪辑室》最终剪辑版封面，画面为剪辑时间线与夜色光影">
+          <div class="hm-feature-body">
+            <span class="hm-badge">本周焦点</span>
+            <h3>《深夜剪辑室》第 12 集：当 AI 学会在片尾留白</h3>
+            <p>主创团队用三个月时间记录一次“减法剪辑”实验：删掉 37% 的镜头后，短剧的情绪反而更完整。本期附完整分镜对照表与剪辑参数说明。</p>
+            <div class="hm-meta"><span>导演 · 林见山</span><span>12-08 出发</span><span>18:42</span><span>播放 24.6 万</span></div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="8124">♡ 点赞 <b>8124</b></button>
+              <button class="hm-op hm-fav" type="button">☆ 收藏</button>
+              <button class="hm-op hm-comment-open" type="button">💬 评论</button>
+              <button class="hm-op hm-copy" type="button" data-link="feature-night-studio">⧉ 复制链接</button>
+            </div>
+          </div>
+        </article>
+        <div class="hm-video-list" id="hmVideoList">
+          <article class="hm-video-item">
+            <span class="hm-video-num">01</span>
+            <div>
+              <h3><a href="#hm-featured">《外卖骑手的第九个雨夜》第 3 集</a></h3>
+              <p>用手机竖屏拍摄、AI 修复噪点的城市切片短剧，讲述一个普通骑手在雨夜的三个选择。</p>
+              <div class="hm-tags"><span class="hm-tag">城市探索</span><span class="hm-tag">情感故事</span></div>
+              <div class="hm-meta"><span>周雨桐</span><span>06:12</span><span>播放 9.8 万</span></div>
+            </div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="2411">♡ <b>2411</b></button>
+              <button class="hm-op hm-fav" type="button">☆</button>
+            </div>
+          </article>
+          <article class="hm-video-item">
+            <span class="hm-video-num">02</span>
+            <div>
+              <h3><a href="#hm-featured">《一镜到底的咖啡馆》拍摄全记录</a></h3>
+              <p>从脚本拆分到 AI 分镜生成，完整复盘一条 90 秒长镜头短剧的七天制作流程。</p>
+              <div class="hm-tags"><span class="hm-tag">教程干货</span><span class="hm-tag">创作幕后</span></div>
+              <div class="hm-meta"><span>陈默</span><span>14:05</span><span>播放 7.2 万</span></div>
+            </div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="1830">♡ <b>1830</b></button>
+              <button class="hm-op hm-fav" type="button">☆</button>
+            </div>
+          </article>
+          <article class="hm-video-item">
+            <span class="hm-video-num">03</span>
+            <div>
+              <h3><a href="#hm-featured">《奶奶的旧磁带》AI 修复版</a></h3>
+              <p>拍摄于 1998 年的家庭录像被 AI 逐帧修复，并重新配上一段孙女的对白，播放量突破 30 万。</p>
+              <div class="hm-tags"><span class="hm-tag">治愈影像</span><span class="hm-tag">情感故事</span></div>
+              <div class="hm-meta"><span>苏晚</span><span>08:36</span><span>播放 30.4 万</span></div>
+            </div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="5620">♡ <b>5620</b></button>
+              <button class="hm-op hm-fav" type="button">☆</button>
+            </div>
+          </article>
+          <article class="hm-video-item">
+            <span class="hm-video-num">04</span>
+            <div>
+              <h3><a href="#hm-featured">《三分钟，讲完一个悬疑反转》</a></h3>
+              <p>新人导演阿橙的爆款拆解：用 AI 脚本工具做结构预演，把反转点精确落到第 137 秒。</p>
+              <div class="hm-tags"><span class="hm-tag">实用技巧</span><span class="hm-tag">深度测评</span></div>
+              <div class="hm-meta"><span>阿橙</span><span>03:21</span><span>播放 12.1 万</span></div>
+            </div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="3320">♡ <b>3320</b></button>
+              <button class="hm-op hm-fav" type="button">☆</button>
+            </div>
+          </article>
+          <article class="hm-video-item">
+            <span class="hm-video-num">05</span>
+            <div>
+              <h3><a href="#hm-featured">《在便利店遇见二十年前的自己》</a></h3>
+              <p>一人分饰两角的 AI 换脸实验短剧，附带完整的角色一致性提示词与调色方案。</p>
+              <div class="hm-tags"><span class="hm-tag">科技前沿</span><span class="hm-tag">情感故事</span></div>
+              <div class="hm-meta"><span>林见山</span><span>11:08</span><span>播放 15.7 万</span></div>
+            </div>
+            <div class="hm-ops">
+              <button class="hm-op hm-like" type="button" data-count="4100">♡ <b>4100</b></button>
+              <button class="hm-op hm-fav" type="button">☆</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="hm-section" id="hm-topic" style="background:var(--hm-bg2);border-block:1px solid var(--hm-line)">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Editorial Series</p>
+          <h2>专题企划 <span>·</span> 黑马AI短剧精品内容矩阵</h2>
+        </div>
+        <p>由平台编辑部与创作者共同策划，围绕短剧创作的不同维度持续更新。</p>
+      </div>
+      <div class="hm-topics">
+        <article class="hm-topic">
+          <div class="hm-topic-head"><h3>《七天做一部短剧》</h3><span class="hm-status">更新中</span></div>
+          <div class="hm-topic-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23131a27'/%3E%3Cg fill='none' stroke='%233de1ff' stroke-width='2' opacity='.7'%3E%3Crect x='60' y='60' width='150' height='100' rx='8'/%3E%3Crect x='245' y='60' width='150' height='100' rx='8'/%3E%3Crect x='430' y='60' width='150' height='100' rx='8'/%3E%3Crect x='150' y='200' width='150' height='100' rx='8'/%3E%3Crect x='340' y='200' width='150' height='100' rx='8'/%3E%3C/g%3E%3Cg fill='%23ff3d7f'%3E%3Ccircle cx='135' cy='110' r='9'/%3E%3Ccircle cx='320' cy='110' r='9'/%3E%3Ccircle cx='505' cy='110' r='9'/%3E%3C/g%3E%3Ctext x='60' y='335' font-family='sans-serif' font-size='18' fill='%23c6ff4d'%3E七天分镜工作表%3C/text%3E%3C/svg%3E" alt="专题《七天做一部短剧》的分镜工作表示意图"></div>
+          <p>面向零基础创作者的实战企划，从一句话创意走到成片上线，全程公开时间表与踩坑清单。</p>
+          <ul>
+            <li>第 3 期：如何用三句话写清短剧的核心冲突</li>
+            <li>第 4 期：AI 分镜与真人补拍的衔接方法</li>
+            <li>第 5 期：上线前的九项质量自检</li>
+          </ul>
+        </article>
+        <article class="hm-topic">
+          <div class="hm-topic-head"><h3>《AI 背后的手》</h3><span class="hm-status">已完结</span></div>
+          <p>八位创作者访谈，谈他们为什么选择 AI 工具、又在哪里坚持手工完成。</p>
+          <ul>
+            <li>林见山：剪辑师的判断力不能被替代</li>
+            <li>苏晚：AI 修复让旧影像重新有了温度</li>
+            <li>阿橙：新人最缺的不是工具，是结构感</li>
+          </ul>
+        </article>
+        <article class="hm-topic">
+          <div class="hm-topic-head"><h3>《城市微光计划》</h3><span class="hm-status">征集中</span></div>
+          <p>以本地生活为主题的短剧征集企划，鼓励创作者记录身边真实的小人物与小故事。</p>
+          <ul>
+            <li>入选作品可获得平台推荐位与制作补贴</li>
+            <li>每月评选一次，投票由社区共同参与</li>
+            <li>优秀作品将收录进年度精品内容合集</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析 -->
+  <section class="hm-section" id="hm-explain">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Insight</p>
+          <h2>关键词解析 <span>·</span> 什么是黑马AI短剧</h2>
+        </div>
+      </div>
+      <div class="hm-explain">
+        <h3><i>01</i>品牌定位：一个以 AI 为工具的短剧内容品牌</h3>
+        <p>黑马AI短剧并非单一的工具产品，而是一个以短剧为核心形态的<strong>视频品牌官网与内容平台</strong>。我们把“黑马”理解为一种创作姿态：不追逐现成的爆款模板，而是相信那些还没有被看见的新人、新结构、新表达。平台围绕短剧这一垂直领域持续深耕，提供从创意孵化、脚本打磨、分镜预演，到成片发布、观众互动、数据回看的一整套流程支持。对企业合作伙伴而言，这里是品牌短剧的官方发布阵地；对个人创作者而言，这里是能被认真对待的创作社区。</p>
+        <p>在内容生态上，黑马AI短剧坚持原创与正版原则。所有上架短剧均需通过原创声明与素材合规审核，平台提供高清播放与稳定的分发能力，并通过创作者认证、作品署名、收益分账等机制保护创作权益。我们希望把“值得信赖”落在每一部作品的字幕、片尾署名和更新记录里，而不是停留在一句口号上。</p>
+        <h3><i>02</i>内容方向：短剧的多条叙事路径</h3>
+        <div class="hm-split">
+          <div>
+            <p>平台的内容方向大致分为四条路径。第一条是<strong>情感与生活记录</strong>，比如《外卖骑手的第九个雨夜》《奶奶的旧磁带》，这类作品往往取材于真实经验，篇幅短、情绪浓，适合在通勤与睡前观看。第二条是<strong>悬疑与结构实验</strong>，创作者热衷于在三分种内完成一次反转，AI 脚本工具常被用来做结构预演，把节奏点精确到秒。</p>
+            <p>第三条是<strong>创作幕后与教程干货</strong>，这也是社区活跃度最高的一类内容。很多新人从“如何写第一版分镜”开始，逐步进阶到灯光、调色、声音设计。第四条是<strong>城市与在地文化</strong>，把镜头对准街巷、菜市场、老厂房，用短剧的形式保留一座城市正在消失的细节。四条路径相互交叉，构成黑马AI短剧多元而包容的内容底色。</p>
+          </div>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 360'%3E%3Crect width='480' height='360' fill='%23141b26'/%3E%3Cg stroke='%232f3a4d' stroke-width='1'%3E%3Cpath d='M40 300 H440'/%3E%3Cpath d='M40 240 H440'/%3E%3Cpath d='M40 180 H440'/%3E%3Cpath d='M40 120 H440'/%3E%3C/g%3E%3Cpolyline points='40,290 110,250 180,265 250,190 320,205 390,130 440,150' fill='none' stroke='%23ff3d7f' stroke-width='3'/%3E%3Cpolyline points='40,310 110,290 180,300 250,255 320,268 390,220 440,232' fill='none' stroke='%233de1ff' stroke-width='3' stroke-dasharray='6 6'/%3E%3Cg fill='%23c6ff4d'%3E%3Ccircle cx='250' cy='190' r='5'/%3E%3Ccircle cx='390' cy='130' r='5'/%3E%3C/g%3E%3Ctext x='40' y='60' font-family='sans-serif' font-size='19' fill='%23e8ecf3'%3E内容热度与完播率趋势%3C/text%3E%3Ctext x='40' y='340' font-family='sans-serif' font-size='13' fill='%2397a1b3'%3E情感类 · 悬疑类 · 幕后类 · 城市类%3C/text%3E%3C/svg%3E" alt="黑马AI短剧四类内容方向的热度与完播率趋势图">
+        </div>
+        <h3><i>03</i>创作生态：从社区互助到官方支持</h3>
+        <p>一个健康的视频品牌不能只有作品，还要有让作品持续生长的土壤。黑马AI短剧建立了三层创作者支持体系：第一层是<strong>新人扶持</strong>，新注册创作者可申请一次“首作诊断”，由编辑与资深作者给出结构、节奏和字幕规范方面的建议；第二层是<strong>成长陪伴</strong>，每月开放一次线上工作坊，围绕具体问题展开，例如“如何在 60 秒内建立人物关系”“AI 生成镜头之间如何保持色彩一致”。</p>
+        <p>第三层是<strong>联合出品</strong>，表现稳定的创作者可以参与平台的专题企划，与企业品牌合作完成定制短剧。这条路径让创作者在保持个人风格的同时获得可持续的收益，也让品牌方以更自然的方式进入内容叙事。平台对合作项目执行统一的品质标准：剧本需通过伦理与合规评审，成片需标注 AI 参与环节，所有素材都需具备合法授权。这些看起来繁琐的流程，正是“官方”“正版”“值得信赖”这些词的实际含义。</p>
+        <h3><i>04</i>使用与参与：观众如何加入这个社区</h3>
+        <p>对普通观众来说，黑马AI短剧官方网站最直接的价值是“好看且稳定”。你可以按题材、时长、更新时间筛选短剧，收藏喜欢的作品，在评论区留下自己的看法，也可以把喜欢的短剧链接分享给朋友。平台在首页与列表页均提供搜索入口，输入创作者昵称、剧名关键词或专题名称即可找到对应内容。收藏与点赞数据会同步到个人主页，方便你回顾一年里看过的所有故事。</p>
+        <p>对想尝试创作的人，参与方式同样清晰：通过页面的投稿入口提交作品基本信息与样片链接，通过初审后进入编辑沟通环节；也可以先在社区发布 30 秒以内的试拍片段，收集反馈后再决定是否扩展为完整短剧。平台鼓励真实、温暖、有力量的表达，也对抄袭、搬运与恶意刷量保持零容忍。我们希望黑马AI短剧不仅是一个观看短剧的地方，更是一个让创作者愿意长期停留、共同成长的内容生态。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 -->
+  <section class="hm-section" id="hm-author" style="background:var(--hm-bg2);border-block:1px solid var(--hm-line)">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Creators</p>
+          <h2>创作者矩阵 <span>·</span> 黑马AI短剧签约与认证作者</h2>
+        </div>
+        <p>点击“简介”可查看创作者完整档案，所有作者均通过平台实名与作品原创认证。</p>
+      </div>
+      <div class="hm-authors">
+        <article class="hm-author">
+          <span class="hm-avatar" style="background:linear-gradient(135deg,#ff3d7f,#a12bff)">林</span>
+          <h3>林见山</h3>
+          <span class="hm-role">导演 · 悬疑结构</span>
+          <p>作品 86 部 · 粉丝 12.4 万。擅长三分种内的多重反转与冷色调叙事，坚持“先写人物，再写反转”。</p>
+          <div class="hm-author-stats"><span>播放 980 万</span><span>收藏 21 万</span></div>
+          <button class="hm-more-btn hm-author-open" type="button" data-author="林见山：从业十年的广告导演，2023 年转向 AI 短剧创作。代表作《深夜剪辑室》《在便利店遇见二十年前的自己》。他坚持所有 AI 生成镜头都要经过人工调色与声音重做，认为“技术负责效率，人负责判断”。">简介</button>
+        </article>
+        <article class="hm-author">
+          <span class="hm-avatar" style="background:linear-gradient(135deg,#3de1ff,#0f7f9e)">苏</span>
+          <h3>苏晚</h3>
+          <span class="hm-role">纪录 · 治愈影像</span>
+          <p>作品 52 部 · 粉丝 9.7 万。专注家庭影像与旧素材修复，擅长把私人记忆讲成公共情绪。</p>
+          <div class="hm-author-stats"><span>播放 640 万</span><span>收藏 18 万</span></div>
+          <button class="hm-more-btn hm-author-open" type="button" data-author="苏晚：纪录片编导出身，2024 年加入黑马AI短剧。她用 AI 修复了外婆留下的 1998 年家庭录像，由此开始“旧影像新叙事”系列。《奶奶的旧磁带》是平台年度口碑作品之一。">简介</button>
+        </article>
+        <article class="hm-author">
+          <span class="hm-avatar" style="background:linear-gradient(135deg,#c6ff4d,#5f8c00)">陈</span>
+          <h3>陈默</h3>
+          <span class="hm-role">教程 · 剪辑实操</span>
+          <p>作品 71 部 · 粉丝 8.3 万。把复杂流程拆成可执行步骤，是社区里被引用最多的技术型作者。</p>
+          <div class="hm-author-stats"><span>播放 520 万</span><span>收藏 26 万</span></div>
+          <button class="hm-more-btn hm-author-open" type="button" data-author="陈默：自由剪辑师，擅长把 AI 工具放进真实工作流而非演示视频里。他的《一镜到底的咖啡馆》制作全记录被大量新人收藏，评论区常被称为“新手的第一堂课”。">简介</button>
+        </article>
+        <article class="hm-author">
+          <span class="hm-avatar" style="background:linear-gradient(135deg,#ffb03d,#ff3d7f)">橙</span>
+          <h3>阿橙</h3>
+          <span class="hm-role">新人 · 类型实验</span>
+          <p>作品 24 部 · 粉丝 5.1 万。2025 年才发布第一部短剧，凭结构清晰的悬疑小品快速获得关注。</p>
+          <div class="hm-author-stats"><span>播放 310 万</span><span>收藏 9.2 万</span></div>
+          <button class="hm-more-btn hm-author-open" type="button" data-author="阿橙：非科班出身，本职是产品经理。她把做需求文档的方法迁移到短剧写作上，用 AI 工具做节拍预演，形成了辨识度极高的“三分钟反转”风格，是平台新人成长计划的代表案例。">简介</button>
+        </article>
+        <article class="hm-author">
+          <span class="hm-avatar" style="background:linear-gradient(135deg,#a12bff,#3de1ff)">周</span>
+          <h3>周雨桐</h3>
+          <span class="hm-role">城市 · 在地故事</span>
+          <p>作品 39 部 · 粉丝 6.8 万。用竖屏记录骑手、摊主、夜班店员，作品多为实地拍摄加轻度 AI 修复。</p>
+          <div class="hm-author-stats"><span>播放 430 万</span><span>收藏 11 万</span></div>
+          <button class="hm-more-btn hm-author-open" type="button" data-author="周雨桐：前新闻摄影记者，习惯在街头等一个真实的瞬间。她的《外卖骑手的第九个雨夜》全部使用手机拍摄，AI 只参与降噪与字幕生成，她说“真实感是这类作品唯一不能妥协的部分”。">简介</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 榜单 + 评论 -->
+  <section class="hm-section" id="hm-rank">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Charts &amp; Voice</p>
+          <h2>数据榜单与用户口碑 <span>·</span> 社区共同选出</h2>
+        </div>
+        <p>榜单每周一更新，综合播放完成度、收藏率与评论质量，不代表商业投放结果。</p>
+      </div>
+      <div class="hm-two-col">
+        <div class="hm-rank">
+          <h3>本周热度榜 <span>更新于 11-21</span></h3>
+          <ol>
+            <li><span class="hm-rk">1</span><a href="#hm-featured">奶奶的旧磁带</a><span class="hm-hot">热度 98.6</span></li>
+            <li><span class="hm-rk">2</span><a href="#hm-featured">深夜剪辑室 · 第 12 集</a><span class="hm-hot">热度 96.2</span></li>
+            <li><span class="hm-rk">3</span><a href="#hm-featured">在便利店遇见二十年前的自己</a><span class="hm-hot">热度 93.8</span></li>
+            <li><span class="hm-rk">4</span><a href="#hm-featured">三分钟，讲完一个悬疑反转</a><span class="hm-hot">热度 91.4</span></li>
+            <li><span class="hm-rk">5</span><a href="#hm-featured">外卖骑手的第九个雨夜</a><span class="hm-hot">热度 89.7</span></li>
+            <li><span class="hm-rk">6</span><a href="#hm-featured">一镜到底的咖啡馆</a><span class="hm-hot">热度 87.3</span></li>
+          </ol>
+        </div>
+        <div class="hm-rank">
+          <h3>新人潜力榜 <span>近 30 天</span></h3>
+          <ol>
+            <li><span class="hm-rk">1</span><a href="#hm-author">阿橙 · 悬疑实验</a><span class="hm-hot">成长 +214%</span></li>
+            <li><span class="hm-rk">2</span><a href="#hm-author">木石 · 手作记录</a><span class="hm-hot">成长 +168%</span></li>
+            <li><span class="hm-rk">3</span><a href="#hm-author">周雨桐 · 城市纪实</a><span class="hm-hot">成长 +142%</span></li>
+            <li><span class="hm-rk">4</span><a href="#hm-author">小满 · 亲子成长</a><span class="hm-hot">成长 +121%</span></li>
+            <li><span class="hm-rk">5</span><a href="#hm-author">陈默 · 教程拆解</a><span class="hm-hot">成长 +103%</span></li>
+            <li><span class="hm-rk">6</span><a href="#hm-author">苏晚 · 旧影像修复</a><span class="hm-hot">成长 +96%</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <h3 style="font-size:17px;font-weight:800;margin:34px 0 16px">观众怎么说 · 黑马AI短剧社区真实反馈</h3>
+      <div class="hm-comments">
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#ff3d7f,#ffb03d)">阿</span><b>阿泽</b><span>11-20</span></div>
+          <div class="hm-stars">★★★★★</div>
+          <p>《奶奶的旧磁带》看完坐了很久。平台把修复前后的对比放在片尾这个处理很克制，没有过度煽情，反而更有力量。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#3de1ff,#a12bff)">M</span><b>Momo</b><span>11-19</span></div>
+          <div class="hm-stars">★★★★☆</div>
+          <p>教程区真的能学到东西，陈默那期讲分镜衔接的，我照着改了三次自己的短片，完播率从 31% 提到了 58%。希望多出这种带参数的。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#c6ff4d,#3de1ff)">林</span><b>林外</b><span>11-18</span></div>
+          <div class="hm-stars">★★★★★</div>
+          <p>作为企业号运营，我们在这里做过一期品牌短剧，从立项到上线大概五周。流程比想象中规范，素材授权和审核说明都写得很清楚。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#a12bff,#ff3d7f)">小</span><b>小满</b><span>11-18</span></div>
+          <div class="hm-stars">★★★★☆</div>
+          <p>搜索功能挺好用，输入“雨夜”能直接搜到好几部相关的。就是希望能加个按主角性别筛选，找片会更快。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#ffb03d,#c6ff4d)">周</span><b>周周</b><span>11-17</span></div>
+          <div class="hm-stars">★★★★★</div>
+          <p>看完《深夜剪辑室》的“减法剪辑”那集，把自己 40 分钟的素材删到 12 分钟，第一次觉得短剧里留白也是有设计感的。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#3de1ff,#c6ff4d)">K</span><b>Kevin</b><span>11-16</span></div>
+          <div class="hm-stars">★★★★☆</div>
+          <p>新人投稿的反馈速度可以再快点，我等了六天才收到初审意见。不过编辑提的三条修改建议都很具体，不是模板式回复。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#ff3d7f,#a12bff)">石</span><b>石头</b><span>11-15</span></div>
+          <div class="hm-stars">★★★★★</div>
+          <p>城市微光计划这个专题很对我的胃口，希望多拍点菜市场和夜班的题材，普通人的故事比爽剧更耐看。</p>
+        </div>
+        <div class="hm-comment">
+          <div class="hm-comment-head"><span class="hm-avatar" style="background:linear-gradient(135deg,#c6ff4d,#a12bff)">柚</span><b>柚子汽水</b><span>11-14</span></div>
+          <div class="hm-stars">★★★★☆</div>
+          <p>建议在播放页加一个“AI 参与说明”的快捷入口，现在要翻到简介最底部才看得到，对内容透明度来说挺重要的。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 企业动态 + 合作 + 投稿 + FAQ -->
+  <section class="hm-section" id="hm-news" style="background:var(--hm-bg2);border-block:1px solid var(--hm-line)">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Newsroom</p>
+          <h2>企业动态 <span>·</span> 官方发布与内容更新日志</h2>
+        </div>
+        <p>平台的重要更新、赛事报名与生态合作信息，都会在这里第一时间公布。</p>
+      </div>
+      <div class="hm-two-col">
+        <div class="hm-timeline">
+          <div class="hm-timeline-item">
+            <span class="hm-timeline-date">11-21</span>
+            <div><h3>首届黑马 AI 短剧创作挑战赛开启报名</h3><p>主题为“我身边的三个故事”，设新人组与专业组，报名截止 11 月 30 日，最高可获联合出品机会。</p></div>
+          </div>
+          <div class="hm-timeline-item">
+            <span class="hm-timeline-date">11-18</span>
+            <div><h3>播放页新增“AI 参与环节”标注规范</h3><p>所有新上架短剧需在简介中说明脚本、画面、声音三个环节的 AI 使用情况，进一步提高内容透明度。</p></div>
+          </div>
+          <div class="hm-timeline-item">
+            <span class="hm-timeline-date">11-12</span>
+            <div><h3>与四家城市文化机构达成内容合作</h3><p>围绕在地文化主题共同孵化短剧项目，首批三部作品预计 12 月中旬上线。</p></div>
+          </div>
+          <div class="hm-timeline-item">
+            <span class="hm-timeline-date">11-05</span>
+            <div><h3>创作者后台支持批量导出作品数据</h3><p>新增完播率、收藏转化与观众地域分布三项指标，方便创作者复盘选题与节奏设计。</p></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div class="hm-rank">
+            <h3>合作品牌与伙伴 <span>内容生态共建</span></h3>
+            <div class="hm-partners" style="margin-top:6px">
+              <div class="hm-partner">城市影像馆</div>
+              <div class="hm-partner">拾光后期工作室</div>
+              <div class="hm-partner">北纬独立书店</div>
+              <div class="hm-partner">光影放映计划</div>
+            </div>
+          </div>
+          <div class="hm-rank">
+            <h3>创作灵感速递 <span>每周三条</span></h3>
+            <ul style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:#a7b2c4">
+              <li>· 试着用一句没有主语的台词开场，让观众自己补全人物关系。</li>
+              <li>· 把最重要的信息放在第 8 秒，留白比信息密度更能抓住注意力。</li>
+              <li>· 短剧的结尾不必解答，给一个可被讨论的开放问题更容易形成互动。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="hm-submit" id="hm-submit" style="margin-top:30px">
+        <div>
+          <h3>把你的故事交给黑马AI短剧</h3>
+          <p>无论你已有成片，还是只有一个想法，都可以通过官方投稿入口联系我们。审核周期通常为 5 至 7 个工作日，所有选题均有编辑跟进反馈。</p>
+        </div>
+        <button class="hm-cta-primary" id="hmSubmitBtn" type="button">进入投稿表单</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-section" id="hm-faq">
+    <div class="hm-wrap">
+      <div class="hm-section-head">
+        <div>
+          <p class="hm-eyebrow">Help</p>
+          <h2>常见问题 <span>·</span> 关于官方平台与创作</h2>
+        </div>
+      </div>
+      <div class="hm-faq">
+        <details open>
+          <summary>黑马AI短剧是官方平台吗？内容是否正版？</summary>
+          <p>是。黑马AI短剧为品牌官方网站，所有上架作品均经过原创声明与素材授权审核，页面标注的播放与收藏数据来自平台内部统计，可通过官网查看完整片单与更新记录。</p>
+        </details>
+        <details>
+          <summary>我没有拍片经验，可以投稿吗？</summary>
+          <p>可以。平台设有新人扶持计划，接受 30 秒以上的试拍片段。我们会先看叙事是否完整、情绪是否成立，再看技术完成度，并在反馈中给出下一步建议。</p>
+        </details>
+        <details>
+          <summary>使用 AI 生成的内容需要标注吗？</summary>
+          <p>需要。请在投稿时说明脚本、画面、声音三个环节中 AI 的参与程度，并在成片简介中清楚标注。这既是平台规范，也是对观众的基本透明。</p>
+        </details>
+        <details>
+          <summary>投稿后多久能收到结果？</summary>
+          <p>初审通常 5 至 7 个工作日完成，通过后编辑会与您沟通修改与上线时间。节假日顺延，所有结果均通过投稿时填写的联系方式通知。</p>
+        </details>
+        <details>
+          <summary>作品上线后有收益分成吗？</summary>
+          <p>平台对认证创作者的原创作品提供分账机制，具体比例依据作品类型、播放与收藏数据结算，每月公布一次。联合出品项目另行签署协议。</p>
+        </details>
+        <details>
+          <summary>可以在官网之外转载平台内容吗？</summary>
+          <p>请先联系官方获取书面授权，并保留片尾署名与来源信息。未经授权的二次剪辑、搬运与商业化使用，平台会依规处理。</p>
+        </details>
+        <details>
+          <summary>如何参加创作挑战赛？</summary>
+          <p>在公告条或企业动态中进入报名页，填写作品信息并提交样片。报名截止 11 月 30 日，评选结果将于 12 月中旬在官网公布。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- S8 页脚 -->
+<footer class="hm-footer">
+  <div class="hm-wrap">
+    <div class="hm-footer-grid">
+      <div>
+        <div class="hm-logo" style="margin-bottom:12px"><span class="hm-logo-mark">黑</span><span>黑马AI短剧<small>HEIMA AI DRAMA</small></span></div>
+        <p>黑马AI短剧官方网站，专注 AI 短剧创作与传播的视频品牌平台。我们持续运营原创内容生态，为创作者与企业提供高品质的影像表达支持。</p>
+      </div>
+      <div>
+        <h4>内容板块</h4>
+        <ul>
+          <li><a href="#hm-featured">精选短剧</a></li>
+          <li><a href="#hm-topic">专题企划</a></li>
+          <li><a href="#hm-explain">关键词解析</a></li>
+          <li><a href="#hm-rank">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>创作者服务</h4>
+        <ul>
+          <li><a href="#hm-author">创作者矩阵</a></li>
+          <li><a href="#hm-submit">官方投稿入口</a></li>
+          <li><a href="#hm-news">企业动态</a></li>
+          <li><a href="#hm-faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>合作邮箱：heima@drama.example</li>
+          <li>投稿咨询：工作日 10:00–18:00</li>
+          <li>内容更新：每晚 20:00</li>
+          <li><button class="hm-more-btn" id="hmFooterShare" type="button" style="padding:5px 12px">分享官网链接</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hm-footer-bottom">
+      <span>黑马AI短剧官方网站 | 版权所有 | 持续运营中</span>
+      <span>内容均为原创或已获授权 · 正版高清 · 备案号：影备 2026-1122 号</span>
+    </div>
+  </div>
+</footer>
+
+<button class="hm-top-btn" id="hmTopBtn" type="button" aria-label="回到顶部">↑</button>
+<div class="hm-toast" id="hmToast" role="status" aria-live="polite"></div>
+
+<!-- 评论弹窗 -->
+<div class="hm-modal-mask" id="hmCommentMask" role="dialog" aria-modal="true" aria-label="发表评论">
+  <div class="hm-modal">
+    <h3>发表评论</h3>
+    <p>友善、具体、有内容的评论更容易被创作者看到。</p>
+    <label for="hmCommentName">昵称</label>
+    <input id="hmCommentName" type="text" placeholder="请输入昵称">
+    <label for="hmCommentText">评论内容</label>
+    <textarea id="hmCommentText" rows="4" placeholder="说说你对这部短剧的看法"></textarea>
+    <div class="hm-modal-foot">
+      <button class="hm-modal-cancel hm-close-modal" type="button">取消</button>
+      <button class="hm-modal-submit" id="hmCommentSend" type="button">发布评论</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者信息弹窗 -->
+<div class="hm-modal-mask" id="hmAuthorMask" role="dialog" aria-modal="true" aria-label="创作者信息">
+  <div class="hm-modal">
+    <h3 id="hmAuthorTitle">创作者档案</h3>
+    <p id="hmAuthorBody">加载中</p>
+    <div class="hm-modal-foot">
+      <button class="hm-modal-cancel hm-close-modal" type="button">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="hm-modal-mask" id="hmSubmitMask" role="dialog" aria-modal="true" aria-label="官方投稿">
+  <div class="hm-modal">
+    <h3>官方投稿</h3>
+    <p>提交后将由编辑在 5 至 7 个工作日内反馈，请确保联系方式填写准确。</p>
+    <label for="hmSubmitName">创作者昵称</label>
+    <input id="hmSubmitName" type="text" placeholder="请输入昵称">
+    <label for="hmSubmitTitle">作品名称</label>
+    <input id="hmSubmitTitle" type="text" placeholder="请输入短剧名称">
+    <label for="hmSubmitType">作品类型</label>
+    <select id="hmSubmitType">
+      <option>情感与生活记录</option>
+      <option>悬疑与结构实验</option>
+      <option>创作幕后与教程</option>
+      <option>城市与在地文化</option>
+    </select>
+    <label for="hmSubmitNote">作品简介</label>
+    <textarea id="hmSubmitNote" rows="3" placeholder="简要说明故事内容与 AI 参与环节"></textarea>
+    <div class="hm-modal-foot">
+      <button class="hm-modal-cancel hm-close-modal" type="button">取消</button>
+      <button class="hm-modal-submit" id="hmSubmitSend" type="button">提交作品</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var toast = document.getElementById('hmToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('hm-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('hm-show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('hmBurger');
+  var nav = document.getElementById('hmNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('hm-nav-open');
+    burger.classList.toggle('hm-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 860){
+      nav.classList.remove('hm-nav-open');
+      burger.classList.remove('hm-open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('hmSearch');
+  var searchBtn = document.getElementById('hmSearchBtn');
+  var searchFeedback = document.getElementById('hmSearchFeedback');
+  var searchPool = ['深夜剪辑室','奶奶的旧磁带','外卖骑手的第九个雨夜','一镜到底的咖啡馆','悬疑反转','林见山','苏晚','城市微光计划','新人扶持计划','创作挑战赛'];
+  function runSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      searchFeedback.textContent = '请输入短剧名称、创作者昵称或专题关键词。';
+      searchFeedback.classList.add('hm-show');
+      return;
+    }
+    var hits = searchPool.filter(function(item){ return item.indexOf(q) !== -1; });
+    if(hits.length){
+      searchFeedback.textContent = '找到 ' + hits.length + ' 条相关结果：' + hits.join('、');
+    }else{
+      searchFeedback.textContent = '暂未收录“' + q + '”，可在投稿区推荐你希望看到的短剧题材。';
+    }
+    searchFeedback.classList.add('hm-show');
+  }
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); runSearch(); } });
+
+  /* 复制链接 */
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ showToast('链接已复制，可分享给朋友'); }).catch(function(){ showToast('复制失败，请手动选择地址'); });
+    }else{
+      showToast('链接已生成：黑马AI短剧 · ' + text);
+    }
+  }
+  document.querySelectorAll('.hm-copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyText('黑马AI短剧官方网站 · ' + (btn.getAttribute('data-link') || '精选短剧'));
+    });
+  });
+  document.getElementById('hmShareBtn').addEventListener('click', function(){
+    copyText('黑马AI短剧官方网站 · 精选短剧与创作者社区');
+  });
+  document.getElementById('hmFooterShare').addEventListener('click', function(){
+    copyText('黑马AI短剧官方网站 · 精选短剧与创作者社区');
+  });
+
+  /* 点赞 / 收藏 */
+  document.querySelectorAll('.hm-like').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var b = btn.querySelector('b');
+      var base = parseInt(btn.getAttribute('data-count'), 10);
+      var liked = btn.classList.toggle('hm-active');
+      if(b){ b.textContent = liked ? (base + 1) : base; }
+    });
+  });
+  document.querySelectorAll('.hm-fav').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('hm-saved');
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已加入收藏，可在个人主页查看' : '已取消收藏');
+    });
+  });
+
+  /* 弹窗通用 */
+  function openMask(mask){ mask.classList.add('hm-show'); }
+  function closeMask(mask){ mask.classList.remove('hm-show'); }
+  document.querySelectorAll('.hm-close-modal').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var mask = btn.closest('.hm-modal-mask');
+      if(mask){ closeMask(mask); }
+    });
+  });
+  document.querySelectorAll('.hm-modal-mask').forEach(function(mask){
+    mask.addEventListener('click', function(e){ if(e.target === mask){ closeMask(mask); } });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.hm-modal-mask.hm-show').forEach(closeMask);
+    }
+  });
+
+  /* 评论弹窗 */
+  var commentMask = document.getElementById('hmCommentMask');
+  document.querySelectorAll('.hm-comment-open').forEach(function(btn){
+    btn.addEventListener('click', function(){ openMask(commentMask); });
+  });
+  document.getElementById('hmCommentSend').addEventListener('click', function(){
+    var name = document.getElementById('hmCommentName').value.trim();
+    var text = document.getElementById('hmCommentText').value.trim();
+    if(!name || !text){
+      showToast('请填写昵称和评论内容');
+      return;
+    }
+    closeMask(commentMask);
+    document.getElementById('hmCommentName').value = '';
+    document.getElementById('hmCommentText').value = '';
+    showToast('评论已提交，通过审核后将显示在评论区');
+  });
+
+  /* 作者信息弹窗 */
+  var authorMask = document.getElementById('hmAuthorMask');
+  document.querySelectorAll('.hm-author-open').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.getElementById('hmAuthorTitle').textContent = '创作者档案';
+      document.getElementById('hmAuthorBody').textContent = btn.getAttribute('data-author') || '暂无更多信息';
+      openMask(authorMask);
+    });
+  });
+
+  /* 投稿弹窗 */
+  var submitMask = document.getElementById('hmSubmitMask');
+  function openSubmit(){ openMask(submitMask); }
+  document.getElementById('hmSubmitBtn').addEventListener('click', openSubmit);
+  document.getElementById('hmSubmitHero').addEventListener('click', openSubmit);
+  document.getElementById('hmSubmitSend').addEventListener('click', function(){
+    var name = document.getElementById('hmSubmitName').value.trim();
+    var title = document.getElementById('hmSubmitTitle').value.trim();
+    if(!name || !title){
+      showToast('请填写昵称与作品名称');
+      return;
+    }
+    closeMask(submitMask);
+    document.getElementById('hmSubmitName').value = '';
+    document.getElementById('hmSubmitTitle').value = '';
+    document.getElementById('hmSubmitNote').value = '';
+    showToast('投稿已提交，编辑将在 5 至 7 个工作日内反馈');
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('hmTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ topBtn.classList.add('hm-show'); }
+    else{ topBtn.classList.remove('hm-show'); }
+  }, { passive: true });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+  </html>
